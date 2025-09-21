@@ -6648,6 +6648,19 @@
               "$ref": "#/definitions/KeyGroup"
             },
             "headers": {
+              "Retry-After": {
+                "type": "integer",
+                "format": "int32",
+                "description": "The Retry-After header can indicate how long the client should wait before polling the operation status."
+              }
+            }
+          },
+          "202": {
+            "description": "The request has been accepted for processing, but processing has not yet completed.",
+            "schema": {
+              "$ref": "#/definitions/KeyGroup"
+            },
+            "headers": {
               "Location": {
                 "type": "string",
                 "description": "The Location header contains the URL where the status of the long running operation can be checked."
@@ -12607,7 +12620,8 @@
           "description": "List of match conditions.",
           "items": {
             "$ref": "#/definitions/MatchConditionAfd"
-          }
+          },
+          "x-ms-identifiers": []
         },
         "action": {
           "$ref": "#/definitions/ActionType",
@@ -15723,14 +15737,16 @@
           "description": "Describes the exclusions that are applied to all rules in the group.",
           "items": {
             "$ref": "#/definitions/ManagedRuleExclusion"
-          }
+          },
+          "x-ms-identifiers": []
         },
         "rules": {
           "type": "array",
           "description": "List of rules that will be disabled. If none specified, all rules in the group will be disabled.",
           "items": {
             "$ref": "#/definitions/ManagedRuleOverrideAfd"
-          }
+          },
+          "x-ms-identifiers": []
         }
       },
       "required": [
@@ -15869,14 +15885,16 @@
           "description": "Describes the exclusions that are applied to all rules in the set.",
           "items": {
             "$ref": "#/definitions/ManagedRuleExclusion"
-          }
+          },
+          "x-ms-identifiers": []
         },
         "ruleGroupOverrides": {
           "type": "array",
           "description": "Defines the rule group overrides to apply to the rule set.",
           "items": {
             "$ref": "#/definitions/ManagedRuleGroupOverrideAfd"
-          }
+          },
+          "x-ms-identifiers": []
         }
       },
       "required": [
@@ -15983,7 +16001,8 @@
           "description": "List of rule sets.",
           "items": {
             "$ref": "#/definitions/ManagedRuleSetAfd"
-          }
+          },
+          "x-ms-identifiers": []
         }
       }
     },
@@ -20286,7 +20305,8 @@
           "description": "Waf associations",
           "items": {
             "$ref": "#/definitions/SecurityPolicyWebApplicationFirewallAssociation"
-          }
+          },
+          "x-ms-identifiers": []
         }
       },
       "allOf": [
@@ -21888,7 +21908,8 @@
           "description": "List of paths associated with the web agent.",
           "items": {
             "$ref": "#/definitions/AgentPath"
-          }
+          },
+          "x-ms-identifiers": []
         },
         "profileAgentLinks": {
           "type": "array",
@@ -21922,7 +21943,8 @@
           "description": "List of paths associated with the web agent.",
           "items": {
             "$ref": "#/definitions/AgentPath"
-          }
+          },
+          "x-ms-identifiers": []
         }
       }
     },
