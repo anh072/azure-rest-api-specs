@@ -12995,7 +12995,8 @@
         "UrlSigning",
         "OriginGroupOverride",
         "RouteConfigurationOverride",
-        "EdgeAction"
+        "EdgeAction",
+        "AfdUrlSigning"
       ],
       "x-ms-enum": {
         "name": "DeliveryRuleActionName",
@@ -13040,6 +13041,10 @@
           {
             "name": "EdgeAction",
             "value": "EdgeAction"
+          },
+          {
+            "name": "AfdUrlSigning",
+            "value": "AfdUrlSigning"
           }
         ]
       }
@@ -20214,7 +20219,8 @@
       "type": "string",
       "description": "The type of the Security policy to create.",
       "enum": [
-        "WebApplicationFirewall"
+        "WebApplicationFirewall",
+        "WebApplicationFirewallEmbedded"
       ],
       "x-ms-enum": {
         "name": "SecurityPolicyType",
@@ -20223,6 +20229,10 @@
           {
             "name": "WebApplicationFirewall",
             "value": "WebApplicationFirewall"
+          },
+          {
+            "name": "WebApplicationFirewallEmbedded",
+            "value": "WebApplicationFirewallEmbedded"
           }
         ]
       }
@@ -20314,7 +20324,7 @@
           "$ref": "#/definitions/SecurityPolicyPropertiesParameters"
         }
       ],
-      "x-ms-discriminator-value": "SecurityPolicyWebApplicationFirewallParametersWithEmbeddedWafPolicy"
+      "x-ms-discriminator-value": "WebApplicationFirewallEmbedded"
     },
     "ServerPortMatchConditionParameters": {
       "type": "object",
